@@ -1,0 +1,559 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Segoe UI" "Roboto" "Helvetica Neue";
+	font-size: 100%;
+	list-style: none;
+	vertical-align: baseline;
+	scrollbar-width: 0;
+}
+
+*::-webkit-scrollbar {
+	background-color: transparent;
+	width: 5px;
+	height: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+	border-radius: 99px;
+	background: linear-gradient(
+		to bottom right,
+		rgba(236, 186, 255, 0.7),
+		rgba(159, 143, 219, 0.7)
+	);
+	border: 0px solid #ddd;
+}
+
+body {
+	width: 100vw;
+	cursor: default;
+	overflow: hidden;
+	font-size: 14px;
+	color: #000000;
+	background-color: #ffffff;
+	font-family: Inter, Arial, sans-serif;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	text-decoration: none;
+	color: #007bff;
+}
+
+a:hover {
+  	text-decoration: underline;
+}
+
+.p {
+  	padding: 10px;
+}
+
+.companylogo {
+  	width: 150px;
+}
+
+.icon,
+.icon-max,
+.noIcon {
+  	cursor: pointer;
+}
+
+.icon {
+  	width: 25px;
+}
+
+.icon-max {
+  	width: 64px;
+}
+
+.noIcon {
+	cursor: default;
+	width: 20px;
+}
+
+.trancy-selector {
+  border: none;
+}
+
+.trancy-selector option {
+	background-color: #fff;
+	color: #333;
+}
+
+.trancy-selector:focus {
+  	outline: none;
+}
+
+/* ---------------------- API Default BG ----------------------------- */
+
+.apicdoc {
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+.background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.api-body {
+	width: 100%;
+	display: flex;
+	overflow: hidden;
+}
+
+.api-body span {
+  	width: 85%;
+}
+
+/*------------------------------- API Sidebar ---------------------------------------  */
+
+.api-sidebar {
+	height: 100vh;
+	width: 15%;
+	border-right: 1px solid #ddd;
+	position: relative;
+}
+
+.api-sidebar div {
+	width: 100%;
+	padding: 10px;
+}
+
+.api-sidebar .api-sidebar-top {
+  	height: 8vh;
+}
+
+.api-sidebar .api-sidebar-top button {
+  	display: none;
+}
+.api-sidebar .api-sidebar-middle {
+  	height: 84vh;
+}
+
+.api-sidebar .api-sidebar-middle ul li {
+	margin: 0.5rem 0;
+	padding: 5px 10px;
+	border-radius: 3px;
+	cursor: pointer;
+	color: #252525;
+}
+
+.api-sidebar .api-sidebar-middle ul li.active {
+	font-weight: 500;
+	color: #5469d4;
+	background-color: #f0eeff;
+}
+
+.api-sidebar .api-sidebar-middle ul li.active:hover {
+  	color: #252525;
+}
+
+.api-sidebar .api-sidebar-bottom {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	bottom: 0;
+	height: 8vh;
+	border-top: 1px solid #ddd;
+}
+
+.api-sidebar .api-sidebar-bottom p {
+	font-weight: 500;
+	color: #5469d4;
+}
+
+/* ------------------------------ API Header --------------------------------------- */
+.api-header {
+	height: 8vh;
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.api-header ul {
+	position: absolute;
+	right: 2rem;
+	display: flex;
+}
+
+.api-header ul li {
+	margin: 0 0.5rem;
+	font-weight: 500;
+	color: #5469d4;
+}
+
+/* -------------------------------------- API Main Body--------------------------------------- */
+
+.api-main-component {
+	max-height: 92vh;
+	width: 100%;
+	overflow: scroll;
+	display: flex;
+	justify-content: space-around;
+	position: relative;
+	padding-top: 2rem;
+}
+
+.api-compartment-left {
+	height: 100%;
+	width: 45%;
+}
+
+.api-compartment-right {
+	height: 100%;
+	width: 45%;
+	margin-top: 3.2rem;
+}
+
+/* ---------------------------- Code Block ------------------------------------------------- */
+
+.codeBlock {
+	width: 90%;
+	max-height: fit-content;
+	background-color: #3e444f;
+	color: #fff;
+	border-radius: 5px;
+	margin: 1rem 0;
+}
+
+.codeBlock-header {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	background-color: #505865;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.codeBlock-header i {
+ 	 cursor: pointer;
+}
+
+.copied-message {
+  position: absolute;
+  display: flex;
+  margin-left: 3rem;
+  justify-content: center;
+  animation: slideIn 0.2s ease-in;
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateY(-100%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+.copied-message p {
+	background-color: #ffffff;
+	padding: 1px 5px;
+	border-radius: 5px;
+	color: black;
+	display: flex;
+	align-items: center;
+}
+
+.codeBlock-header h1 {
+  	font-weight: 700;
+}
+
+.codeBlock-body {
+  	padding: 10px;
+}
+
+/* ---------------------------------Text Block---------------------------------------- */
+.textBlock {
+	width: 90%;
+	max-height: fit-content;
+	background-color: transparent;
+	color: #000000;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	margin: 2rem 0;
+}
+
+.textBlock-header {
+	height: fit-content;
+	position: relative;
+	padding: 10px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.textBlock-header-languages {
+	margin: 10px 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+.textBlock-header-languages li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.textBlock-body {
+	border: 1px solid #ddd;
+	position: relative;
+	padding: 10px;
+	max-height: 40vh;
+	background-color: #f5f6f8;
+	overflow-x: hidden;
+}
+
+.textBlock-body-copyHeading {
+	position: absolute;
+	right: 10px;
+}
+
+.textBlock-body-copyHeading p {
+	color: #007bff;
+	font-weight: 700;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+.centpays-container {
+	line-height: 1.3rem;
+	text-align: justify;
+}
+
+.centpays-container h2 {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.centpays-container-intro {
+  	margin: 3rem 0;
+}
+
+.platform-features div {
+  	margin: 1rem 0;
+}
+
+.platform-features h3 {
+  	font-size: 1rem;
+}
+
+.platform-features h4 {
+  	margin-bottom: 0.3rem;
+}
+
+.platform-features ul {
+	padding-top: 5px;
+	list-style: none;
+}
+
+.platform-features li {
+	margin-bottom: 5px;
+	padding-left: 25px;
+	position: relative;
+}
+
+.platform-features li::before {
+	content: "";
+	display: inline-block;
+	align-items: center;
+	height: 15px;
+	width: 15px;
+	background-size: contain;
+	background-image: url("images/bullet-point.png");
+	margin-right: 10px;
+	position: absolute;
+	left: 0;
+	top: 10%;
+}
+
+.centpays-container-intro-callback{
+	overflow: auto !important;
+}
+
+/* ------------------------------------- Error block table ------------------------------------------- */
+.error-textBlock {
+	width: 90%;
+	max-height: fit-content;
+	background-color: #fff;
+	color: #000000;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+}
+
+.error-textBlock-body {
+	border: 1px solid #ddd;
+	position: relative;
+}
+
+.error-textBlock-body table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: #f5f6f8;
+}
+
+.error-textBlock-body th, td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
+
+
+/* Smartphones (portrait and landscape) */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+	body {
+		font-size: 12px;
+	}
+
+	.companylogo {
+		width: 150px;
+	}
+
+	.icon,
+	.icon-max,
+	.noIcon {
+		cursor: pointer;
+	}
+
+	.icon {
+		width: 25px;
+	}
+
+	.icon-max {
+		width: 64px;
+	}
+
+/* --------------------------------------------------- */
+
+	.apicdoc {
+		width: 100vw;
+		overflow-x: hidden;
+	}
+
+	.background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+
+	.api-body {
+		width: 100%;
+		display: flex;
+		overflow: hidden;
+	}
+
+	.api-body span {
+		width: 100%;
+	}
+
+/*----------------------------------------------------------------------  */
+	.api-sidebar {
+		height: 100vh;
+		width: 70%;
+		border-right: 1px solid #ddd;
+		position: absolute;
+		z-index: 1;
+		background-color: #ffffff;
+		transition: width 0.3s ease;
+		animation: slideIn 0.2 ease-in-out;
+	}
+
+	@keyframes slideIn {
+		from {
+			transform: translateY(-100%); /* Start off-screen to the left */
+		}
+		to {
+			transform: translateY(0); /* Slide in to the original position */
+		}
+	}
+
+	.api-sidebar.open {
+		width: 0px; 
+	}
+
+	.hidden {
+		display: none;
+	}
+
+	.api-sidebar .api-sidebar-top {
+		height: 8vh;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.api-sidebar .api-sidebar-top img {
+		height: 100%;
+		margin-top: 0.5rem;
+	}
+
+	.api-sidebar .api-sidebar-top button {
+		display: block;
+		background-color: transparent;
+		border: none;
+		padding: 2px 10px;
+		transform: scale(2);
+		font-weight: 700;
+		transition: 0.5s ease;
+	}
+
+	@media only screen and (max-width: 600px) {
+		.api-sidebar .api-sidebar-top button {
+			display: inline-block;
+			margin: 1 auto;
+		}
+	}
+
+/* ----------------------------------------------------------------------------- */
+	.api-main-component {
+		display: block;
+	}
+
+	.api-compartment-left {
+		margin: 0 auto;
+		height: 100%;
+		width: 90%;
+	}
+
+	.api-compartment-right {
+		margin: 0 auto;
+		height: 100%;
+		width: 90%;
+		margin-bottom: 5rem;
+	}
+
+/* ----------------------------------------------------------------------------- */
+
+	.codeBlock {
+		width: 100%;
+	}
+
+/* ------------------------------------------------------------------------- */
+	.textBlock {
+		width: 100%;
+	}
+
+	.textBlock-header {
+		height: fit-content;
+		overflow-y: hidden;
+	}
+}
+
+/* Tablets (portrait and landscape) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+ 
+}
